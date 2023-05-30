@@ -1,0 +1,39 @@
+.social {
+  .socialLink {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--color-grey-100);
+    width: 200px;
+
+    &:hover {
+      background: var(--color-grey-200);
+    }
+
+    span {
+      font-size: var(--size-6);
+      color: var(--color-grey-800);
+      font-weight: 700;
+      margin-left: 15px;
+    }
+  }
+}
+
+.cv {
+  display: flex;
+  width: fit-content;
+  border-radius: 10px;
+  background: var(--color-grey-100);
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  h3 {
+    font-size: var(--size-6);
+  }
+
+  svg {
+    font-size: 60px;
+  }
+}

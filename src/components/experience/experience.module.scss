@@ -1,0 +1,18 @@
+.experience {
+  width: 90%;
+  max-width: 60rem;
+  margin: var(--size-8) auto;
+  height: 100%;
+
+  h1 {
+    font-size: var(--size-8);
+    color: var(--color-grey-800);
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .experience h1 {
+    font-size: var(--size-16);
+  }
+}

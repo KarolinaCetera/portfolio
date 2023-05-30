@@ -1,0 +1,25 @@
+.techElement {
+  width: calc((100% / 1) - 10px + 10px / 1) ;
+  padding: 10px;
+  background: var(--color-grey-200);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+  h3 {
+    letter-spacing: 1px;
+  }
+}
+
+.elementTitle {
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 850px) {
+  .techElement {
+    width: calc((100% / 3) - 10px + 10px / 3) ;
+  }
+}

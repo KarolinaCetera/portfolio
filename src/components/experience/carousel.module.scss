@@ -1,0 +1,41 @@
+
+.carouselContainer {
+  margin: 0 auto;
+  min-width: 90%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.slide {
+  min-width: 100%;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.carouselButton {
+  width: 5%;
+  align-self: center;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
