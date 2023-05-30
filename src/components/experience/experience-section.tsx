@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExperienceElement from "./experience-element";
 import { ExperienceElementType } from "@component/typings";
 import classes from "./experience-section.module.scss";
-import ExperienceElement from "@component/components/experience/experience-element";
 
 interface ExperienceSectionProps {
   experienceElement: ExperienceElementType;

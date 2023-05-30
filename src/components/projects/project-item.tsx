@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { FC } from "react";
+import Link from "next/link";
 import { Project } from "@component/typings";
 
 import classes from "./project-item.module.scss";

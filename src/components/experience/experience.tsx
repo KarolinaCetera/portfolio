@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { experienceElements } from "@component/consts";
-import classes from "./experience.module.scss";
 import ExperienceSection from "@component/components/experience/experience-section";
 import { useMediaQuery } from "@mui/material";
 import Carousel from "@component/components/experience/carousel";
+import classes from "./experience.module.scss";
 
 const Experience = () => {
   const matches = useMediaQuery("(min-width:768px)");

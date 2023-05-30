@@ -1,0 +1,33 @@
+.contactData {
+  width: 90%;
+  margin: var(--size-6) auto;
+  padding-bottom: var(--size-6);
+  text-align: left;
+
+  h2 {
+    margin: 0;
+    color: var(--color-grey-200);
+  }
+}
+
+.dataContainer {
+  display: flex;
+  align-items: center;
+  margin: var(--size-5) 0;
+  .icon {
+    margin-right: var(--size-2);
+    color: var(--color-grey-200);
+  }
+  a, span {
+    font-size: var(--size-4);
+    color: var(--color-grey-200);
+    letter-spacing: 2px;
+  }
+}
+
+@media (min-width: 900px)  {
+  .contactData {
+    margin: 0 auto;
+    width: 30%;
+  }
+}

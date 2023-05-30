@@ -1,5 +1,5 @@
 .techElement {
-  width: calc((100% / 1) - 10px + 10px / 1) ;
+  width: calc((100% / 1) - var(--size-3) + var(--size-3) / 1) ;
   padding: 10px;
   background: var(--color-grey-200);
   border-radius: 10px;
@@ -13,13 +13,14 @@
 .elementTitle {
   display: flex;
   align-items: center;
+
   img {
-    margin-right: 15px;
+    margin-right: var(--size-4);
   }
 }
 
 @media (min-width: 850px) {
   .techElement {
-    width: calc((100% / 3) - 10px + 10px / 3) ;
+    width: calc((100% / 3) - var(--size-4) + var(--size-4) / 3) ;
   }
 }

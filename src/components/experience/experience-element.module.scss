@@ -1,8 +1,8 @@
 .element {
-  padding: 10px;
+  padding: var(--size-3);
   background: var(--color-grey-100);
-  border-radius: 5px;
-  margin-bottom: 10px;
+  border-radius: var(--size-4);
+  margin-bottom: var(--size-4);
 
   h2, h2{
     margin: 0;

@@ -1,6 +1,5 @@
 import classes from "./about.module.scss";
 import { other, softSkills, techStack } from "@component/consts";
-import { Dispatch, SetStateAction } from "react";
 import AboutSection from "@component/components/about/about-section";
 
 const About = () => {

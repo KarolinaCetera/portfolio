@@ -1,7 +1,7 @@
 .section {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--size-4);
 }
 
 .title {
@@ -12,9 +12,8 @@
   h2 {
     font-size: var(--size-8);
     color: var(--color-grey-800);
-    margin-right: 15px;
-    transition: 0.2s ease-in-out;
   }
+
   i {
     transition: 0.2s ease-in-out;
     transform-origin: center;

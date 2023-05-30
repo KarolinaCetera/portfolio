@@ -1,0 +1,29 @@
+.social {
+  text-align: left;
+  .socialLink, .cv {
+    display: inline-flex;
+    margin-right: var(--size-3);
+    padding: var(--size-1);
+    border-radius: var(--size-3);
+    background: var(--color-grey-100);
+    cursor: pointer;
+
+    svg {
+      color: var(--color-grey-800)
+    }
+
+    &:hover {
+      background: var(--color-grey-200);
+    }
+  }
+
+  .cv {
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    span {
+      font-size: var(--size-6);
+      margin: 0 var(--size-2);
+    }
+  }
+}

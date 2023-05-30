@@ -1,50 +1,94 @@
-.hero {
+.home {
+  padding: 10% 0;
   text-align: center;
-  background-image: linear-gradient(
-                  to bottom,
-                  var(--color-grey-900),
-                  var(--color-grey-800)
-  );
-  padding: var(--size-8) 0;
+  background: var(--color-grey-800);
+}
 
+.hero {
   h1 {
-    font-size: var(--size-16);
-    margin: var(--size-4) 0;
+    padding: 0 var(--size-6);
+    font-size: var(--size-6);
+    margin: var(--size-6) 0;
     color: var(--color-grey-300);
   }
-}
 
-.image {
-  width: 200px;
-  height: 200px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: var(--color-grey-700);
-  margin: auto;
-  img {
-    object-fit: cover;
-    object-position: top;
-    width: 100%;
-    height: 100%;
+  .image {
+    width: var(--size-40);
+    height: var(--size-40);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--color-grey-700);
+    margin: auto;
+    img {
+      object-fit: cover;
+      object-position: top;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
-
-
 .intro {
+  width: 90%;
   margin: 0 auto;
-  width: 40%;
-
   p {
-    font-size: var(--size-6);
+    font-size: var(--size-4);
     color: var(--color-grey-200);
-    width: 90%;
-    max-width: 40rem;
-    margin: auto;
   }
 
   hr {
-    margin: 16px 0
+    margin: var(--size-4)
+  }
+}
+
+@media (min-width: 700px) {
+  .info {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+@media (min-width: 900px) {
+  .home {
+    padding: 0 10%;
+  }
+
+  .hero {
+    padding: var(--size-8) 0;
+    h1 {
+      font-size: var(--size-16);
+    }
+
+    .image {
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  .info {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding: var(--size-6) 0;
+  }
+
+  .intro {
+    padding: 0 var(--size-6);
+    text-align: left;
+    margin:  0;
+
+    p {
+      font-size: var(--size-6);
+      color: var(--color-grey-200);
+      width: 90%;
+      max-width: 40rem;
+      margin: 0;
+    }
+
+    hr {
+      margin: var(--size-6) 0;
+      width: 100%;
+    }
   }
 }

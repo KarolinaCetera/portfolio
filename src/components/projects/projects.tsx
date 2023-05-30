@@ -12,7 +12,8 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
   return (
     <section className={classes.posts}>
       <h1>All Projects</h1>
-      <ProjectsGrid projects={dummyPosts} />
+      <h2>Available soon</h2>
+      {/*<ProjectsGrid projects={dummyPosts} />*/}
     </section>
   );
 };

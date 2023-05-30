@@ -1,5 +1,5 @@
-import { ExperienceElementType } from "@component/typings";
 import { FC } from "react";
+import { ExperienceElementType } from "@component/typings";
 import classes from "./experience-element.module.scss";
 
 interface ExperienceElementProps {

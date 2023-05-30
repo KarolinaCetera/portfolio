@@ -1,7 +1,7 @@
-import Image from "next/image";
-import classes from "./tech-element.module.scss";
 import { FC } from "react";
+import Image from "next/image";
 import { TechElementType } from "@component/typings";
+import classes from "./tech-element.module.scss";
 
 interface TechElementProps {
   element: TechElementType;

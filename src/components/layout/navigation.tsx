@@ -18,7 +18,7 @@ const Navigation = () => {
   return (
     <header className={classes.header}>
       <div className={classes.controls}>
-        <Link href="/">
+        <Link href="/" onClick={() => setIsNavOpen(false)}>
           <Logo />
         </Link>
         {!matches && (
@@ -27,8 +27,8 @@ const Navigation = () => {
           </IconButton>
         )}
       </div>
-      {matches && <NavList />}
-      {!matches && isNavOpen && <NavDrawer />}
+      {matches && <NavList setIsNavOpen={setIsNavOpen} />}
+      {!matches && isNavOpen && <NavDrawer setIsNavOpen={setIsNavOpen} />}
     </header>
   );
 };
