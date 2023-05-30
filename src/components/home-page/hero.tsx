@@ -1,6 +1,7 @@
 import classes from "./hero.module.scss";
 import Image from "next/image";
 import image from "../../../public/image.png";
+import ContactData from "@component/components/contact/contact-data";
 
 const Hero = () => {
   return (
@@ -20,6 +21,7 @@ const Hero = () => {
           practices, project patterns and optimization techniques
         </p>
       </div>
+      <ContactData />
     </section>
   );
 };
