@@ -1,6 +1,6 @@
 import TechElement from "@component/components/about/tech-element";
 import classes from "./about-section.module.scss";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { TechElementType } from "@component/typings";
 import {
   Accordion,
@@ -11,6 +11,7 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import useSWR from "swr";
 import { TechElementName } from "@component/components/about/about";
+import { fetcher } from "@component/api-utils/api-call";
 
 interface AboutSectionProps {
   name: TechElementName;
@@ -18,12 +19,11 @@ interface AboutSectionProps {
 }
 
 const AboutSection: FC<AboutSectionProps> = ({ name, title }) => {
-  const fetcher = async (): Promise<{ [key: string]: TechElementType[] }> => {
-    const response = await fetch(`http://localhost:3000/api/data/${name}`);
-    return await response.json();
-  };
-
-  const { data, error, isLoading } = useSWR(title, fetcher);
+  const getSections = () =>
+    fetcher<{ [key: string]: TechElementType[] }>(
+      `http://localhost:3000/api/data/${name}`
+    );
+  const { data, error, isLoading } = useSWR(title, getSections);
 
   if (isLoading) return <CircularProgress sx={{ margin: "1rem auto" }} />;
   if (error && !data) {

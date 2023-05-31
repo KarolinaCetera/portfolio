@@ -1,7 +1,5 @@
-import classes from "./about.module.scss";
 import AboutSection from "@component/components/about/about-section";
-import { useState } from "react";
-import { CircularProgress } from "@mui/material";
+import classes from "./about.module.scss";
 
 export enum TechElementName {
   TECH_STACK = "techStack",
