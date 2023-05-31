@@ -3,9 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export const initDb = async (res: NextApiResponse) => {
   try {
-    const client = await MongoClient.connect(
-      "mongodb+srv://admin:admin@cluster0.xoklb.mongodb.net/portfolio?retryWrites=true&w=majority"
-    );
+    const client = await MongoClient.connect(process.env.DB || "");
     return client;
   } catch (e) {
     res.status(500).json({ message: "Connecting to the database failed" });

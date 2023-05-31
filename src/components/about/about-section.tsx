@@ -20,9 +20,7 @@ interface AboutSectionProps {
 
 const AboutSection: FC<AboutSectionProps> = ({ name, title }) => {
   const getSections = () =>
-    fetcher<{ [key: string]: TechElementType[] }>(
-      `http://localhost:3000/api/data/${name}`
-    );
+    fetcher<{ [key: string]: TechElementType[] }>(`/api/data/${name}`);
   const { data, error, isLoading } = useSWR(title, getSections);
 
   if (isLoading) return <CircularProgress sx={{ margin: "1rem auto" }} />;
