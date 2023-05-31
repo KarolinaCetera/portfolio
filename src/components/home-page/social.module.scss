@@ -27,3 +27,13 @@
     }
   }
 }
+
+.info {
+  margin-top: var(--size-2);
+  padding: var(--size-1);
+  background: var(--color-grey-200);
+  border-radius: 5px;
+  position: absolute;
+  z-index: 2;
+  transition: 0.2s ease-in-out;
+}

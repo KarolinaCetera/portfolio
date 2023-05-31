@@ -13,6 +13,7 @@ export type TechElementType = {
 };
 
 export type ExperienceElementType = {
+  _id?: string;
   companyName: string;
   period: string;
   stack: string;

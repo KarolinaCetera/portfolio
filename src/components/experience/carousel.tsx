@@ -1,16 +1,18 @@
 import { FC } from "react";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
-import { experienceElements } from "@component/consts";
 import ExperienceElement from "./experience-element";
 import classes from "./carousel.module.scss";
+import { ExperienceElementType } from "@component/typings";
 
 interface CarouselProps {
+  experience: ExperienceElementType[];
   activeStep: number;
   handleBack: () => void;
   handleNext: () => void;
 }
 
 const Carousel: FC<CarouselProps> = ({
+  experience,
   activeStep,
   handleBack,
   handleNext,
@@ -23,7 +25,7 @@ const Carousel: FC<CarouselProps> = ({
         fontSize="large"
       />
       <div className={classes.carousel}>
-        {experienceElements.map((element, index) => (
+        {experience.map((element, index) => (
           <div
             key={element.companyName}
             className={classes.slide}

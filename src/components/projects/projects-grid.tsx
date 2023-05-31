@@ -10,6 +10,7 @@ interface ProjectsGridProps {
 const ProjectsGrid: FC<ProjectsGridProps> = ({ projects }) => {
   return (
     <ul className={classes.grid}>
+      <h2>Available soon</h2>
       {projects.map((project) => (
         <ProjectItem project={project} key={project.id} />
       ))}

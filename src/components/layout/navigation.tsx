@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { IconButton, useMediaQuery } from "@mui/material";
-import { Menu } from "@mui/icons-material";
+import { Info, Menu } from "@mui/icons-material";
 import Logo from "@component/components/layout/logo";
 import NavDrawer from "@component/components/layout/nav-drawer";
 import NavList from "@component/components/layout/nav-list";

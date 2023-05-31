@@ -1,16 +1,20 @@
-import { useState } from "react";
-import { experienceElements } from "@component/consts";
+import { FC, useState } from "react";
 import ExperienceSection from "@component/components/experience/experience-section";
 import { useMediaQuery } from "@mui/material";
 import Carousel from "@component/components/experience/carousel";
 import classes from "./experience.module.scss";
+import { ExperienceElementType } from "@component/typings";
 
-const Experience = () => {
+interface ExperienceProps {
+  experience: ExperienceElementType[];
+}
+
+const Experience: FC<ExperienceProps> = ({ experience }) => {
   const matches = useMediaQuery("(min-width:768px)");
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
-    if (activeStep === experienceElements.length - 1) {
+    if (activeStep === experience.length - 1) {
       setActiveStep(0);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -19,7 +23,7 @@ const Experience = () => {
 
   const handleBack = () => {
     if (activeStep === 0) {
-      setActiveStep(experienceElements.length - 1);
+      setActiveStep(experience.length - 1);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep - 1);
     }
@@ -30,13 +34,14 @@ const Experience = () => {
       <h1>Experience</h1>
       {matches ? (
         <Carousel
+          experience={experience}
           activeStep={activeStep}
           handleBack={handleBack}
           handleNext={handleNext}
         />
       ) : (
         <>
-          {experienceElements.map((element) => (
+          {experience.map((element) => (
             <ExperienceSection
               experienceElement={element}
               key={element.companyName}
