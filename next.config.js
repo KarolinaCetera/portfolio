@@ -1,6 +1,27 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 
-module.exports = nextConfig
+const nextConfig = (phase) => {
+  if (phase === PHASE_DEVELOPMENT_SERVER) {
+    return {
+      env: {
+        username: "admin",
+        password: "admin",
+        cluster: "cluster0",
+        key: "portfolio",
+      },
+    };
+  }
+
+  return {
+    reactStrictMode: true,
+    env: {
+      username: "admin",
+      password: "admin",
+      cluster: "cluster0",
+      key: "portfolio",
+    },
+  };
+};
+
+module.exports = nextConfig;

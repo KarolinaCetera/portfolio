@@ -1,9 +1,11 @@
 import { Db, MongoClient } from "mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
 
+const url = `mongodb+srv://${process.env.username}:${process.env.password}@${process.env.cluster}.xoklb.mongodb.net/${process.env.key}?retryWrites=true&w=majority`;
+
 export const initDb = async (res: NextApiResponse) => {
   try {
-    const client = await MongoClient.connect(process.env.DB || "");
+    const client = await MongoClient.connect(url);
     return client;
   } catch (e) {
     res.status(500).json({ message: "Connecting to the database failed" });
