@@ -1,34 +1,23 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import Experience from "@component/components/experience/experience";
-import { ExperienceElementType, TechElementType } from "@component/typings";
-import useSWR from "swr";
+import { ExperienceElementType } from "@component/typings";
 import { CircularProgress } from "@mui/material";
-import { fetcher } from "@component/api-utils/api-call";
-import { useQuery } from "react-query";
+import { useGetData } from "@component/api-utils/api-call";
 
 interface ExperiencePageProps {
   experience: ExperienceElementType[];
 }
 
 const ExperiencePage: FC<ExperiencePageProps> = ({ experience }) => {
-  const getExperience = () => fetcher<ExperienceElementType[]>(`experience`);
-
-  const { data, isLoading, isError, error } = useQuery(
-    ["experience"],
-    getExperience
-  );
-  useEffect(() => {
-    if (data) {
-      console.log(data);
-    }
-  }, [data]);
+  const { data, isLoading, isError, error } =
+    useGetData<ExperienceElementType[]>("experience");
 
   if (isLoading) return <CircularProgress sx={{ margin: "1rem auto" }} />;
   if (isError && error) {
     return <p>There was a problem... Try again!</p>;
   }
 
-  return <Experience experience={[]} />;
+  return <Experience experience={data || []} />;
 };
 
 export default ExperiencePage;

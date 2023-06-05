@@ -9,9 +9,8 @@ import {
   CircularProgress,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import useSWR from "swr";
 import { TechElementName } from "@component/components/about/about";
-import { fetcher } from "@component/api-utils/api-call";
+import { useGetData } from "@component/api-utils/api-call";
 
 interface AboutSectionProps {
   name: TechElementName;
@@ -19,12 +18,11 @@ interface AboutSectionProps {
 }
 
 const AboutSection: FC<AboutSectionProps> = ({ name, title }) => {
-  const getSections = () =>
-    fetcher<{ [key: string]: TechElementType[] }>(`${name}`);
-  const { data, error, isLoading } = useSWR(title, getSections);
+  const { data, isLoading, isError, error } =
+    useGetData<TechElementType[]>(name);
 
   if (isLoading) return <CircularProgress sx={{ margin: "1rem auto" }} />;
-  if (error && !data) {
+  if (isError && error && !data) {
     return <p>There was a problem... Try again!</p>;
   }
 
@@ -42,7 +40,7 @@ const AboutSection: FC<AboutSectionProps> = ({ name, title }) => {
       </AccordionSummary>
       <AccordionDetails className={classes.section}>
         {data &&
-          data[name].map((element) => (
+          data?.map((element) => (
             <TechElement key={element.name} element={element} />
           ))}
       </AccordionDetails>
