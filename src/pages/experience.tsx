@@ -11,7 +11,7 @@ interface ExperiencePageProps {
 
 const ExperiencePage: FC<ExperiencePageProps> = ({ experience }) => {
   const getExperience = () =>
-    fetcher<{ [key: string]: ExperienceElementType[] }>(`/api/data/experience`);
+    fetcher<{ [key: string]: ExperienceElementType[] }>(`experience`);
 
   const { data, error, isLoading } = useSWR("experience", getExperience);
 
