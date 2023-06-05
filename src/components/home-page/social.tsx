@@ -23,10 +23,10 @@ const Social = () => {
       >
         <GitHubIcon fontSize="large" />
       </Link>
-      <div className={classes.cv}>
+      <a download href="/cv.pdf" className={classes.cv}>
         <DownloadIcon fontSize="large" />
         <span>CV</span>
-      </div>
+      </a>
       <div className={classes.cv} onClick={() => setShowInfo(!showInfo)}>
         <Info fontSize="large" />
       </div>
