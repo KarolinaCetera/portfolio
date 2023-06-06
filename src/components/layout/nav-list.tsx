@@ -3,6 +3,7 @@ import Link from "next/link";
 import { navLinks } from "@component/consts";
 import classes from "./nav-list.module.scss";
 import { FC } from "react";
+import { useTranslation } from "next-i18next";
 
 interface NavListProps {
   setIsNavOpen?: (value: boolean) => void;
@@ -10,6 +11,7 @@ interface NavListProps {
 
 const NavList: FC<NavListProps> = ({ setIsNavOpen }) => {
   const router = useRouter();
+  const { t } = useTranslation("common");
 
   return (
     <nav className={classes.navList}>
@@ -21,7 +23,7 @@ const NavList: FC<NavListProps> = ({ setIsNavOpen }) => {
               href={path}
               className={router.pathname == path ? classes.active : ""}
             >
-              {name}
+              {t(name)}
             </Link>
           </li>
         ))}

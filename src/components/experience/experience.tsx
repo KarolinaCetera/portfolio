@@ -4,12 +4,14 @@ import { useMediaQuery } from "@mui/material";
 import Carousel from "@component/components/experience/carousel";
 import classes from "./experience.module.scss";
 import { ExperienceElementType } from "@component/typings";
+import { useTranslation } from "next-i18next";
 
 interface ExperienceProps {
   experience: ExperienceElementType[];
 }
 
 const Experience: FC<ExperienceProps> = ({ experience }) => {
+  const { t } = useTranslation("common");
   const matches = useMediaQuery("(min-width:768px)");
   const [activeStep, setActiveStep] = useState(0);
 
@@ -31,7 +33,7 @@ const Experience: FC<ExperienceProps> = ({ experience }) => {
 
   return (
     <section className={classes.experience}>
-      <h1>Experience</h1>
+      <h1>{t("experience")}</h1>
       {matches ? (
         <Carousel
           experience={experience}

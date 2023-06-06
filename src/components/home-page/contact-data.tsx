@@ -2,11 +2,14 @@ import classes from "./contact-data.module.scss";
 import Social from "@component/components/home-page/social";
 import EmailIcon from "@mui/icons-material/Email";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import { useTranslation } from "next-i18next";
 
 const ContactData = () => {
+  const { t } = useTranslation("common");
+
   return (
     <div className={classes.contactData}>
-      <h2>Contact me:</h2>
+      <h2>{t("heroContact")}</h2>
       <div className={classes.dataContainer}>
         <EmailIcon className={classes.icon} />
         <a href="mailto:karolina.cetera@gmail.com">karolina.cetera@gmail.com</a>

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { IconButton, useMediaQuery } from "@mui/material";
-import { Info, Menu } from "@mui/icons-material";
+import { Menu } from "@mui/icons-material";
 import Logo from "@component/components/layout/logo";
 import NavDrawer from "@component/components/layout/nav-drawer";
 import NavList from "@component/components/layout/nav-list";
 import classes from "./navigation.module.scss";
+import LanguageSwitcher from "@component/components/layout/language-switcher";
 
 const Navigation = () => {
   const matches = useMediaQuery("(min-width:768px)");
@@ -18,9 +19,12 @@ const Navigation = () => {
   return (
     <header className={classes.header}>
       <div className={classes.controls}>
-        <Link href="/" onClick={() => setIsNavOpen(false)}>
-          <Logo />
-        </Link>
+        <div className={classes.logo}>
+          <Link href="/" onClick={() => setIsNavOpen(false)}>
+            <Logo />
+          </Link>
+          <LanguageSwitcher />
+        </div>
         {!matches && (
           <IconButton onClick={handleOpenNav}>
             <Menu className={classes.icon} />

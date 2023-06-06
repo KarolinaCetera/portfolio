@@ -2,15 +2,15 @@ import { ExperienceElementType } from "@component/typings";
 
 export const navLinks = [
   {
-    name: "Projects",
+    name: "projects",
     path: "/projects",
   },
   {
-    name: "Experience",
+    name: "experience",
     path: "/experience",
   },
   {
-    name: "About me",
+    name: "about",
     path: "/about",
   },
 ];

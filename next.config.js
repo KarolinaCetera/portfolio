@@ -1,27 +1,5 @@
-/** @type {import('next').NextConfig} */
-const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
+const { i18n } = require("./next-i18next.config");
 
-const nextConfig = (phase) => {
-  if (phase === PHASE_DEVELOPMENT_SERVER) {
-    return {
-      env: {
-        username: "admin",
-        password: "admin",
-        cluster: "cluster0",
-        key: "portfolio",
-      },
-    };
-  }
-
-  return {
-    reactStrictMode: true,
-    env: {
-      username: "admin",
-      password: "admin",
-      cluster: "cluster0",
-      key: "portfolio",
-    },
-  };
+module.exports = {
+  i18n,
 };
-
-module.exports = nextConfig;

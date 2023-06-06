@@ -1,5 +1,6 @@
 import AboutSection from "@component/components/about/about-section";
 import classes from "./about.module.scss";
+import { useTranslation } from "next-i18next";
 
 export enum TechElementName {
   TECH_STACK = "techStack",
@@ -7,13 +8,16 @@ export enum TechElementName {
   OTHER = "other",
 }
 
-const About = () => (
-  <section className={classes.about}>
-    <h1>About me</h1>
-    <AboutSection name={TechElementName.TECH_STACK} title="Tech Stack" />
-    <AboutSection name={TechElementName.SOFT_SKILLS} title="Soft skills" />
-    <AboutSection name={TechElementName.OTHER} title="Other" />
-  </section>
-);
+const About = () => {
+  const { t } = useTranslation("common");
+
+  return (
+    <section className={classes.about}>
+      <h1>{t("about")}</h1>
+      <AboutSection name={TechElementName.TECH_STACK} />
+      <AboutSection name={TechElementName.SOFT_SKILLS} />
+    </section>
+  );
+};
 
 export default About;

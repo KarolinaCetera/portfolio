@@ -11,13 +11,15 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { TechElementName } from "@component/components/about/about";
 import { useGetData } from "@component/api-utils/api-call";
+import { useTranslation } from "next-i18next";
 
 interface AboutSectionProps {
   name: TechElementName;
-  title: string;
 }
 
-const AboutSection: FC<AboutSectionProps> = ({ name, title }) => {
+const AboutSection: FC<AboutSectionProps> = ({ name }) => {
+  const { t } = useTranslation("common");
+
   const { data, isLoading, isError, error } =
     useGetData<TechElementType[]>(name);
 
@@ -36,7 +38,7 @@ const AboutSection: FC<AboutSectionProps> = ({ name, title }) => {
         className={classes.title}
         expandIcon={<ExpandMoreIcon />}
       >
-        <h2>{title}</h2>
+        <h2>{t(name)}</h2>
       </AccordionSummary>
       <AccordionDetails className={classes.section}>
         {data &&
