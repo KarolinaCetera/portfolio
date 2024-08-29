@@ -25,7 +25,7 @@ const Carousel: FC<CarouselProps> = ({
         fontSize="large"
       />
       <div className={classes.carousel}>
-        {experience.map((element, index) => (
+        {experience?.map((element, index) => (
           <div
             key={element.companyName}
             className={classes.slide}

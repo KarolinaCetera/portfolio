@@ -23,7 +23,7 @@ const AboutSection: FC<AboutSectionProps> = ({ name }) => {
   const { data, isLoading, isError, error } =
     useGetData<TechElementType[]>(name);
 
-  if (isLoading) return <CircularProgress sx={{ margin: "1rem auto" }} />;
+  if (isLoading) return <CircularProgress sx={{ margin: "2rem auto" }} />;
   if (isError && error && !data) {
     return <p>There was a problem... Try again!</p>;
   }
